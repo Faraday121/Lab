@@ -1,18 +1,20 @@
 package Main;
 
+import org.junit.Test;
+
 public class Lab1Test {
 
-    @org.junit.Test
+    @Test
     public void q1A() {
         System.out.println(Lab1.Q1A(3.6));
     }
 
-    @org.junit.Test
+    @Test
     public void q1B() {
         System.out.println(Lab1.Q1B(19.4));
     }
 
-    @org.junit.Test
+    @Test
     public void q1C() {
         double v = 10;
         double g =9.81;
@@ -23,7 +25,7 @@ public class Lab1Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void q2() {
         //take x from 1 to 10;
         double[] x = {1,2,3,4,5,6,7,8,9,10};
@@ -33,7 +35,7 @@ public class Lab1Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void q3() {
 
         double result1 = Lab1.Q3B(5.0);
@@ -44,13 +46,20 @@ public class Lab1Test {
 
     }
 
-    @org.junit.Test
-    public void Q4(){
+    @Test
+    public void Q4A(){
         double[] result = Lab1.Q4A();
         for (int i = 0; i <result.length ; i++) {
             System.out.println(result[i]);
         }
 
+    }
+    @Test
+    public void Q4B(){
+        double[] result = Lab1.Q4B();
+        for (int i = 0; i <result.length ; i++) {
+            System.out.println(result[i]);
+        }
     }
 
 

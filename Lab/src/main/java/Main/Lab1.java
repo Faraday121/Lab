@@ -4,6 +4,9 @@ import static java.lang.Math.*;
 import org.apache.commons.math3.*;
 import org.apache.commons.math3.analysis.polynomials.PolynomialFunctionLagrangeForm;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Lab1 {
 
     final static double pai = 3.14;
@@ -65,6 +68,31 @@ public class Lab1 {
         //guess the function is F(x) = AX^2+Bx+C
         double[] result = {result1,result2};
         return result;
+    }
+
+    public static double[] Q4B(){
+        double[] f = {1.49,1.82,2.23,2.72,3.32,4.06,5.95};
+        double[] x = {0.2,0.3,0.4,0.5,0.6,0.7,0.8};
+
+        double x1,x2,fy1,fy2,h;
+
+        //assume h = 0.1
+        h = 0.1;
+        x1=0.4;
+        x2=0.6;
+
+        fy1 = (f[3]-f[1])/(2*h);
+        fy2 = (f[5]-f[3])/(2*h);
+
+        Double truncatedDouble1 = BigDecimal.valueOf(fy1)
+                .setScale(2, RoundingMode.HALF_UP)
+                .doubleValue();
+
+        Double truncatedDouble2 = BigDecimal.valueOf(fy2)
+                .setScale(2, RoundingMode.HALF_UP)
+                .doubleValue();
+
+        return new double[]{truncatedDouble1,truncatedDouble2};
     }
 
 
