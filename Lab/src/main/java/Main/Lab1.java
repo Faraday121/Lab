@@ -1,6 +1,8 @@
 package Main;
 
 import static java.lang.Math.*;
+import org.apache.commons.math3.*;
+import org.apache.commons.math3.analysis.polynomials.PolynomialFunctionLagrangeForm;
 
 public class Lab1 {
 
@@ -51,14 +53,20 @@ public class Lab1 {
 
     public static double[] Q4A(){
         double[] f = {1.49,1.82,2.23,2.72,3.32,4.06,5.95};
-        //double[] x = {0.2,0.3,0.4,0.5,0.6,0.7,0.8};
+        double[] x = {0.2,0.3,0.4,0.5,0.6,0.7,0.8};
 
         double[] diff = new double[7];
         for (int i = 0; i <diff.length-1 ; i++) {
             diff[i]=f[i+1]-f[i];
         }
-        return diff;
+        double result1 = PolynomialFunctionLagrangeForm.evaluate(x,f,0.4);
+        double result2 = PolynomialFunctionLagrangeForm.evaluate(x,f,0.6);
+
+        //guess the function is F(x) = AX^2+Bx+C
+        double[] result = {result1,result2};
+        return result;
     }
+
 
 
 }

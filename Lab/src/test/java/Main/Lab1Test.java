@@ -46,10 +46,11 @@ public class Lab1Test {
 
     @org.junit.Test
     public void Q4(){
-        double[] diff = Lab1.Q4A();
-        for (double v : diff) {
-            System.out.println(v);
+        double[] result = Lab1.Q4A();
+        for (int i = 0; i <result.length ; i++) {
+            System.out.println(result[i]);
         }
+
     }
 
 
