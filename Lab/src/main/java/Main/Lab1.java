@@ -1,9 +1,7 @@
 package Main;
 
 import static java.lang.Math.*;
-import org.apache.commons.math3.*;
 import org.apache.commons.math3.analysis.polynomials.PolynomialFunctionLagrangeForm;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -42,56 +40,46 @@ public class Lab1 {
 
     public static double Q3B(double t){
         //acceleration(dv/dt)
-        //t = 5.0,v=
+        //t = 5.0
         return (2)/((1+pow(t,2))*(sqrt(1+pow(t,2))));
     }
 
     public static double Q3C(double t, double h){
         //central difference formula
         //difference in the y-values / difference in the x-values
-
         //assume h = 0.2
         return (Q3A(t+h)-Q3A(t))/h;
     }
 
-    public static double[] Q4A(){
-        double[] f = {1.49,1.82,2.23,2.72,3.32,4.06,5.95};
-        double[] x = {0.2,0.3,0.4,0.5,0.6,0.7,0.8};
-
-        double[] diff = new double[7];
-        for (int i = 0; i <diff.length-1 ; i++) {
-            diff[i]=f[i+1]-f[i];
-        }
-        double result1 = PolynomialFunctionLagrangeForm.evaluate(x,f,0.4);
-        double result2 = PolynomialFunctionLagrangeForm.evaluate(x,f,0.6);
-
-        //guess the function is F(x) = AX^2+Bx+C
-        double[] result = {result1,result2};
-        return result;
-    }
+//    public static double[] Q4A(){
+//        double[] f = {1.49,1.82,2.23,2.72,3.32,4.06,5.95};
+//        double[] x = {0.2,0.3,0.4,0.5,0.6,0.7,0.8};
+//
+//        double[] diff = new double[7];
+//        for (int i = 0; i <diff.length-1 ; i++) {
+//            diff[i]=f[i+1]-f[i];
+//        }
+//        double result1 = PolynomialFunctionLagrangeForm.evaluate(x,f,0.4);
+//        double result2 = PolynomialFunctionLagrangeForm.evaluate(x,f,0.6);
+//
+//        //guess the function is F(x) = AX^2+Bx+C
+//        double[] result = {result1,result2};
+//        return result;
+//    }
 
     public static double[] Q4B(){
         double[] f = {1.49,1.82,2.23,2.72,3.32,4.06,5.95};
-        double[] x = {0.2,0.3,0.4,0.5,0.6,0.7,0.8};
-
-        double x1,x2,fy1,fy2,h;
-
+        double fy1,fy2,h;
         //assume h = 0.1
         h = 0.1;
-        x1=0.4;
-        x2=0.6;
-
         fy1 = (f[3]-f[1])/(2*h);
         fy2 = (f[5]-f[3])/(2*h);
-
         Double truncatedDouble1 = BigDecimal.valueOf(fy1)
                 .setScale(2, RoundingMode.HALF_UP)
                 .doubleValue();
-
         Double truncatedDouble2 = BigDecimal.valueOf(fy2)
                 .setScale(2, RoundingMode.HALF_UP)
                 .doubleValue();
-
         return new double[]{truncatedDouble1,truncatedDouble2};
     }
 

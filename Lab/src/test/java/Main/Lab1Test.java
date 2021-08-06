@@ -5,8 +5,17 @@ import org.junit.Test;
 public class Lab1Test {
 
     @Test
-    public void q1A() {
-        System.out.println(Lab1.Q1A(3.6));
+    public void q1() {
+        System.out.println("Q1:"+Lab1.Q1A(3.6));
+        System.out.println("Q2:"+Lab1.Q1B(19.4));
+
+        double v = 10;
+        double g =9.81;
+        double[] o = {15,30,45,60,75};
+        for (double value : o) {
+            double result = Lab1.Q1C(v, g, value);
+            System.out.println("Q3:"+"o is " + value + ", result is" + result);
+        }
     }
 
     @Test
@@ -46,16 +55,16 @@ public class Lab1Test {
 
     }
 
+//    @Test
+//    public void Q4A(){
+//        double[] result = Lab1.Q4A();
+//        for (int i = 0; i <result.length ; i++) {
+//            System.out.println(result[i]);
+//        }
+//
+//    }
     @Test
-    public void Q4A(){
-        double[] result = Lab1.Q4A();
-        for (int i = 0; i <result.length ; i++) {
-            System.out.println(result[i]);
-        }
-
-    }
-    @Test
-    public void Q4B(){
+    public void Q4(){
         double[] result = Lab1.Q4B();
         for (int i = 0; i <result.length ; i++) {
             System.out.println(result[i]);
