@@ -15,6 +15,7 @@ public class assignmentTest {
         double b = 9.5;
         double result =simpson(a,b,n,t);
         System.out.println(result);
+        assertEquals(294.1,result,1);
 
 
     }
