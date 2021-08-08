@@ -35,18 +35,6 @@ public class example {
 //    }
 
     public static void main(String[] args) {
-        double t = 9.5;
-        double n = 4;
-        double segment = t/n;
-        double[] termsNumber = new double[(int)n];
-        for (int i = 0; i <termsNumber.length ; i++) {
-            termsNumber[i] = i+1;
-            System.out.println(termsNumber[i]);
-        }
-        double[] terms = new double[(int)n];
-        for (int i = 0; i <terms.length ; i++) {
-            terms[i] = segment*(i+1);
-            System.out.println(terms[i]);
-        }
+        System.out.println(1%2);
     }
 }
