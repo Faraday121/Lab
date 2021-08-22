@@ -11,4 +11,5 @@ public class assignmentTest {
         double result = assignment.simpson2(a,b,n,t);
         assertEquals(490.61,result,1);
     }
+
 }
